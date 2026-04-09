@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+
+body{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+background:linear-gradient(135deg,#667eea,#764ba2);
+font-family:Arial, Helvetica, sans-serif;
+overflow:hidden;
+}
+
+/* floating background */
+
+body::before{
+content:"";
+position:absolute;
+width:600px;
+height:600px;
+background:rgba(255,255,255,0.05);
+border-radius:50%;
+top:-150px;
+left:-150px;
+animation:float 12s infinite linear;
+}
+
+body::after{
+content:"";
+position:absolute;
+width:500px;
+height:500px;
+background:rgba(255,255,255,0.05);
+border-radius:50%;
+bottom:-150px;
+right:-150px;
+animation:float 15s infinite linear reverse;
+}
+
+@keyframes float{
+0%{transform:translateY(0)}
+50%{transform:translateY(40px)}
+100%{transform:translateY(0)}
+}
+
+
+/* Register card */
+
+.register-card{
+width:100%;
+max-width:420px;
+padding:40px;
+border-radius:15px;
+background:rgba(255,255,255,0.15);
+backdrop-filter:blur(15px);
+box-shadow:0 8px 32px rgba(0,0,0,0.2);
+animation:fadeSlide 0.8s ease;
+}
+
+@keyframes fadeSlide{
+from{
+opacity:0;
+transform:translateY(40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+
+/* heading */
+
+.register-card h3{
+font-weight:600;
+color:white;
+}
+
+
+/* labels */
+
+.register-card label{
+color:white;
+font-weight:500;
+}
+
+
+/* INPUT FIX (important) */
+
+.register-card input{
+width:100%;
+padding:12px;
+border-radius:8px;
+border:none;
+margin-top:6px;
+margin-bottom:14px;
+outline:none;
+transition:all 0.25s ease;
+}
+
+
+/* focus animation */
+
+.register-card input:focus{
+box-shadow:0 0 0 2px #34d399;
+transform:scale(1.02);
+}
+
+
+/* help text */
+
+.helptext{
+font-size:13px;
+color:#e5e7eb;
+display:block;
+margin-bottom:10px;
+}
+
+
+/* password rules */
+
+.register-card ul{
+font-size:13px;
+color:#e5e7eb;
+padding-left:18px;
+margin-bottom:15px;
+}
+
+
+/* button */
+
+.btn-register{
+background:#34d399;
+border:none;
+font-weight:600;
+transition:all 0.3s;
+}
+
+.btn-register:hover{
+background:#10b981;
+transform:translateY(-2px);
+box-shadow:0 6px 18px rgba(0,0,0,0.2);
+}
+
+
+/* login text */
+
+.login-text{
+color:white;
+}
+
+.login-text a{
+color:#ffd369;
+font-weight:500;
+text-decoration:none;
+}
+
+.login-text a:hover{
+text-decoration:underline;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="register-card">
+
+<h3 class="text-center mb-4">Create Account</h3>
+
+<form method="POST">
+
+{% csrf_token %}
+
+{{ form.as_p }}
+
+<button type="submit" class="btn btn-register w-100 mt-2">
+Register
+</button>
+
+</form>
+
+<hr style="border-color:rgba(255,255,255,0.3)">
+
+<p class="text-center login-text">
+
+Already have an account?
+
+<a href="{% url 'login' %}">
+Login
+</a>
+
+</p>
+
+</div>
+
+</body>
+</html>

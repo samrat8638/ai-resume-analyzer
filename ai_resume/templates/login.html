@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+
+body{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+background:linear-gradient(135deg,#667eea,#764ba2);
+font-family:Arial, Helvetica, sans-serif;
+overflow:hidden;
+}
+
+/* Floating background animation */
+
+body::before{
+content:"";
+position:absolute;
+width:600px;
+height:600px;
+background:rgba(255,255,255,0.05);
+border-radius:50%;
+top:-150px;
+left:-150px;
+animation:float 12s infinite linear;
+}
+
+body::after{
+content:"";
+position:absolute;
+width:500px;
+height:500px;
+background:rgba(255,255,255,0.05);
+border-radius:50%;
+bottom:-150px;
+right:-150px;
+animation:float 15s infinite linear reverse;
+}
+
+@keyframes float{
+0%{transform:translateY(0)}
+50%{transform:translateY(40px)}
+100%{transform:translateY(0)}
+}
+
+
+/* Login card */
+
+.login-card{
+
+width:100%;
+max-width:420px;
+padding:40px;
+border-radius:15px;
+
+background:rgba(255,255,255,0.15);
+backdrop-filter:blur(15px);
+
+box-shadow:0 8px 32px rgba(0,0,0,0.2);
+
+animation:fadeSlide 0.8s ease;
+}
+
+@keyframes fadeSlide{
+from{
+opacity:0;
+transform:translateY(40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+
+/* Heading */
+
+.login-card h3{
+font-weight:600;
+color:white;
+}
+
+
+/* Form */
+
+.login-card label{
+color:white;
+}
+
+.login-card input{
+border-radius:8px;
+padding:10px;
+}
+
+
+/* Button */
+
+.btn-login{
+
+background:#4facfe;
+border:none;
+font-weight:600;
+transition:all 0.3s;
+}
+
+.btn-login:hover{
+
+background:#00c6ff;
+transform:translateY(-2px);
+box-shadow:0 6px 18px rgba(0,0,0,0.2);
+
+}
+
+
+/* Register text */
+
+.register-text{
+color:white;
+}
+
+.register-text a{
+color:#ffd369;
+font-weight:500;
+text-decoration:none;
+}
+
+.register-text a:hover{
+text-decoration:underline;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="login-card">
+
+<h3 class="text-center mb-4">AI Resume Analyzer</h3>
+
+<form method="POST">
+
+{% csrf_token %}
+
+{{ form.as_p }}
+
+<button type="submit" class="btn btn-login w-100 mt-2">
+Login
+</button>
+
+</form>
+
+<p class="text-center mt-4 register-text">
+
+Don't have an account?
+
+<a href="{% url 'register' %}">
+Register
+</a>
+
+</p>
+
+</div>
+
+</body>
+</html>

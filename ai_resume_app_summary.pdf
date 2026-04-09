@@ -1,0 +1,73 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+2 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+3 0 obj
+<< /Length 3147 >>
+stream
+BT /F2 16 Tf 42 760 Td (APP SUMMARY - AI Resume Analyzer) Tj ET
+BT /F2 11 Tf 42 736 Td (What it is) Tj ET
+BT /F1 9 Tf 42 724 Td (- A Django web app where authenticated users upload PDF resumes, get sector-based skill matching) Tj ET
+BT /F1 9 Tf 42 712 Td (  and scores, and use Gemini-powered interview/career tools.) Tj ET
+BT /F1 9 Tf 42 700 Td (- Core flow in repo: register/login -> upload resume -> review dashboard report -> interview or) Tj ET
+BT /F1 9 Tf 42 688 Td (  AI suggestion.) Tj ET
+BT /F2 11 Tf 42 672 Td (Who it's for) Tj ET
+BT /F1 9 Tf 42 660 Td (- Primary persona: individual job seekers/candidates tracking their resumes and preparing for) Tj ET
+BT /F1 9 Tf 42 648 Td (  interviews.) Tj ET
+BT /F2 11 Tf 42 632 Td (What it does) Tj ET
+BT /F1 9 Tf 42 620 Td (- User registration/login/logout using Django auth.) Tj ET
+BT /F1 9 Tf 42 608 Td (- Upload PDF resume with required sector \(tech/commerce/marketing/engineering/healthcare\).) Tj ET
+BT /F1 9 Tf 42 596 Td (- Extract resume text using PyPDF2.) Tj ET
+BT /F1 9 Tf 42 584 Td (- Compare text against sector skill lists and compute match score.) Tj ET
+BT /F1 9 Tf 42 572 Td (- Show matched/missing skills and score on dashboard.) Tj ET
+BT /F1 9 Tf 42 560 Td (- Generate mock interview questions and feedback using Gemini.) Tj ET
+BT /F1 9 Tf 42 548 Td (- Provide AI career assistant suggestions from freeform prompts.) Tj ET
+BT /F2 11 Tf 42 532 Td (How it works \(repo evidence\)) Tj ET
+BT /F1 9 Tf 42 520 Td (- Frontend: Django templates \(dashboard/upload/interview/ai_suggest/login/register\).) Tj ET
+BT /F1 9 Tf 42 508 Td (- Backend: Django app 'analyzer' \(urls, views, models, forms\) wired into project urls.) Tj ET
+BT /F1 9 Tf 42 496 Td (- Data: SQLite default DB with Resume model \(file, extracted_text, sector, matched/missing) Tj ET
+BT /F1 9 Tf 42 484 Td (  skills, score, timestamp, user FK\).) Tj ET
+BT /F1 9 Tf 42 472 Td (- Flow: PDF saved to media/resumes -> text extraction/normalization -> skill matching/scoring ->) Tj ET
+BT /F1 9 Tf 42 460 Td (  persist -> dashboard display.) Tj ET
+BT /F1 9 Tf 42 448 Td (- AI service: Gemini client initialized from GEMINI_API_KEY and used for interview + career) Tj ET
+BT /F1 9 Tf 42 436 Td (  assistant prompts.) Tj ET
+BT /F2 11 Tf 42 420 Td (How to run \(minimal\)) Tj ET
+BT /F1 9 Tf 42 408 Td (- 1\) cd G:/Ejob_PROJECT/myapp/ai_resume) Tj ET
+BT /F1 9 Tf 42 396 Td (- 2\) Ensure dependencies are installed in your Python environment \(Not found in repo:) Tj ET
+BT /F1 9 Tf 42 384 Td (  requirements/pyproject\).) Tj ET
+BT /F1 9 Tf 42 372 Td (- 3\) Set GEMINI_API_KEY in ai_resume/.env.) Tj ET
+BT /F1 9 Tf 42 360 Td (- 4\) Run: python manage.py migrate) Tj ET
+BT /F1 9 Tf 42 348 Td (- 5\) Run: python manage.py runserver) Tj ET
+BT /F1 9 Tf 42 336 Td (- 6\) Open app, register/login, upload a PDF resume.) Tj ET
+BT /F2 11 Tf 42 320 Td (Not found in repo) Tj ET
+BT /F1 9 Tf 42 308 Td (- Dependency manifest \(requirements.txt/pyproject.toml/Pipfile\).) Tj ET
+BT /F1 9 Tf 42 296 Td (- Documented install/setup guide \(README\).) Tj ET
+BT /F1 9 Tf 42 284 Td (- Production deployment config \(project is in DEBUG=True\).) Tj ET
+endstream
+endobj
+4 0 obj
+<< /Type /Page /Parent 5 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R >> >> /Contents 3 0 R >>
+endobj
+5 0 obj
+<< /Type /Pages /Kids [4 0 R] /Count 1 >>
+endobj
+6 0 obj
+<< /Type /Catalog /Pages 5 0 R >>
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000079 00000 n 
+0000000154 00000 n 
+0000003353 00000 n 
+0000003489 00000 n 
+0000003546 00000 n 
+trailer
+<< /Size 7 /Root 6 0 R >>
+startxref
+3595
+%%EOF
